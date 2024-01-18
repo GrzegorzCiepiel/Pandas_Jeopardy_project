@@ -25,10 +25,15 @@ print(df.columns)
 
 df['Value'] = df['Value'].apply(lambda x: x.split('$')[-1])
 df['Value'] = df['Value'].apply(lambda row: row.split(',')[0] + row.split(',')[-1] if ',' in row else row)
-df['Value'] = df['Value'].apply(lambda x: 0 if x == 'no value' else x)
-df['Value'] = pd.to_numeric(df['Value'])
-print(df.info())
 
+df['Value'] = df['Value'].fillna(0, inplace=True)
+# df['Value'] = df['Value'].apply(lambda x: 0 if x == 'no value' else x) - alternative way
+
+df['Value'] = df['Value'].astype('float64')
+# df['Value'] = pd.to_numeric(df['Value']) - alternative way
+print('\n')
+print(df.info())
+print('\n')
 print(df.head(2))
 
 # 3. Write a function that filters the dataset for questions that contains all of the words in a list of words.
