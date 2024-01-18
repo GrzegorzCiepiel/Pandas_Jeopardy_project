@@ -80,5 +80,5 @@ word_in_time = df.Year[df['Question'].apply(lambda x: "Computer".lower() in x.lo
 
 print(word_in_time)
 
-print ("In 90s the word 'Computer' appears 98 times but between year 1990 and 1995 appears only  5 times.\nIn the 2000s word 'Computer appers 268 timmes what is almost 3 times more.")
+print ("In 90s the word 'Computer' appears 98 times but between year 1990 and 1995 appears only  5 times.\nIn the 2000s word 'Computer' appears 268 timmes what is almost 3 times more.")
 
